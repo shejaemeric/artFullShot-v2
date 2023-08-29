@@ -37,6 +37,12 @@ function Dashboard() {
     setName(JSON.parse(localStorage.getItem("user"))?.user?.displayName);
   }, [navigate]);
 
+  const logOut = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
+
   return (
     <div
       style={{
@@ -83,6 +89,18 @@ function Dashboard() {
                 License
               </a>
               {name ? <p>{`Welcome ${name}`}</p> : <></>}
+              <button
+                style={{
+                  backgroundColor: "none",
+                  color: "white",
+                  border: "1px solid white",
+                  padding: "4px 16px",
+                }}
+                onClick={logOut}
+              >
+                {" "}
+                Log out
+              </button>
             </div>
           </div>
         </div>

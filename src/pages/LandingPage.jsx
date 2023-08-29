@@ -3,6 +3,7 @@ import { getPins } from "../features/Dashboard/GetPins";
 import { useDispatch } from "react-redux";
 
 import sign from "../assets/sign.png";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
   const dispatch = useDispatch();
@@ -25,6 +26,12 @@ const LandingPage = () => {
   useEffect(() => {
     setName(JSON.parse(localStorage.getItem("user"))?.user?.displayName);
   }, []);
+  const navigate = useNavigate();
+  const logOut = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
 
   return (
     <div>
@@ -96,6 +103,18 @@ const LandingPage = () => {
                   Search
                 </button>
                 {name ? <p>{`Welcome ${name}`}</p> : <></>}
+                <button
+                  style={{
+                    backgroundColor: "none",
+                    color: "white",
+                    border: "1px solid white",
+                    padding: "4px 16px",
+                  }}
+                  onClick={logOut}
+                >
+                  {" "}
+                  Log out
+                </button>
               </div>
             </div>
           </div>
