@@ -2,9 +2,11 @@ import { configureStore } from "@reduxjs/toolkit";
 import logger from "redux-logger";
 import thunk from "redux-thunk";
 import GetPinsReducer from "./features/Dashboard/GetPins";
+import SearchByImagesReducer from "./features/Dashboard/SearchByImages";
 
 const reducer = {
   GetPins: GetPinsReducer,
+  SearchByImages: SearchByImagesReducer,
 };
 
 const middleware = [];

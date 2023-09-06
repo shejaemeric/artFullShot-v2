@@ -8,7 +8,7 @@ export const getPins = createAsyncThunk("dash/getPins", async (keyword) => {
     url: "https://pinterest-downloader-download-pinterest-image-video-and-reels.p.rapidapi.com/api/basesearch",
     params: { query: keyword },
     headers: {
-      "X-RapidAPI-Key": "291956e6a0msh45c40c5ab4a881ep1bea65jsn220317b787e4",
+      "X-RapidAPI-Key": "65a82f9d06msh8dfda57910dac51p15b9bajsn537c6178e361",
       "X-RapidAPI-Host":
         "pinterest-downloader-download-pinterest-image-video-and-reels.p.rapidapi.com",
     },
