@@ -3,7 +3,7 @@ import axios from "axios";
 import { showToast } from "../../utils";
 
 export const searchByImages = createAsyncThunk(
-  "dash/searchByImages",
+  "dash/searchByImagess",
   async (link) => {
     console.log(link);
     const options = {
